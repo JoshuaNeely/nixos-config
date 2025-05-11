@@ -29,9 +29,13 @@ in
  	set shiftwidth=2
 	set number
 	set autoindent
+
+        noremap <S-Y> :w! /tmp/vimcopy<CR>
+        noremap <S-D> :w! /tmp/vimcopy <bar> :d<CR>
+        noremap <S-P> :r /tmp/vimcopy<CR>
       ";
     };
-    
+
     home.stateVersion = "24.11";
   };
 }
