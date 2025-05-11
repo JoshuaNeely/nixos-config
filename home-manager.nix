@@ -36,6 +36,36 @@ in
       ";
     };
 
+    dconf = {
+      enable = true;
+      settings = {
+        "org/gnome/shell" = {
+          disable-user-extensions = false;
+
+          # use `dconf watch /`, then poke at gnome settings, to find these values
+          disabled-extensions = [
+            "apps-menu@gnome-shell-extensions.gcampax.github.com"
+            "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
+            "light-style@gnome-shell-extensions.gcampax.github.com"
+            "native-window-placement@gnome-shell-extensions.gcampax.github.com"
+            "places-menu@gnome-shell-extensions.gcampax.github.com"
+            "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com"
+            "user-theme@gnome-shell-extensions.gcampax.github.com"
+            "window-list@gnome-shell-extensions.gcampax.github.com"
+            "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
+            "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
+          ];
+
+          enabled-extensions = [
+            "drive-menu@gnome-shell-extensions.gcampax.github.com"
+            "status-icons@gnome-shell-extensions.gcampax.github.com"
+            "system-monitor@gnome-shell-extensions.gcampax.github.com"
+            "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
+          ];
+        };
+      };
+    };
+
     home.stateVersion = "24.11";
   };
 }
