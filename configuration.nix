@@ -10,6 +10,7 @@
       ./package-configuration.nix
       ./hardware-configuration.nix
       ./home-manager.nix
+      ./env-vars.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
