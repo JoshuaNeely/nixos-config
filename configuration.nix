@@ -49,10 +49,10 @@
     powerManagement.enable = false;
     powerManagement.finegrained = false;
     # should be true if gpu is newer than RTX 20 Series, false otherwise
-    open = false;
+    open = true;
     nvidiaSettings = true;
-    #package = config.boot.kernelPackages.nvidiaPackages.stable; # 570 doesn't seem to work with oblvion-remaster
-    package = config.boot.kernelPackages.nvidiaPackages.legacy_535;
+    package = config.boot.kernelPackages.nvidiaPackages.stable; # 570 doesn't seem to work with oblvion-remaster
+    #package = config.boot.kernelPackages.nvidiaPackages.legacy_535;
   };
   services.xserver.videoDrivers = [ "nvidia" ];
   
