@@ -42,6 +42,19 @@
   services.xserver.desktopManager.gnome.enable = true;
 
 
+  # https://nixos.wiki/wiki/Nvidia
+  hardware.graphics.enable = true;
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    # should be true if gpu is newer than RTX 20 Series, false otherwise
+    open = false;
+    nvidiaSettings = true;
+    #package = config.boot.kernelPackages.nvidiaPackages.stable; # 570 doesn't seem to work with oblvion-remaster
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_535;
+  };
+  services.xserver.videoDrivers = [ "nvidia" ];
   
 
   # Configure keymap in X11
