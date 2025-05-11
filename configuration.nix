@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./package-configuration.nix
       ./hardware-configuration.nix
+      ./home-manager.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -60,13 +61,13 @@
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.alice = {
-  #   isNormalUser = true;
-  #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-  #   packages = with pkgs; [
-  #     tree
-  #   ];
-  # };
+  users.users.josh = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; [
+      tree
+    ];
+  };
 
   # programs.firefox.enable = true;
 
