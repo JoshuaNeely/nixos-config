@@ -8,6 +8,7 @@
         wget
         vim
         steamcmd
+        firefox
     ];
 
     programs.nix-ld.enable = true;
