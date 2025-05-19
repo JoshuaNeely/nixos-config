@@ -46,14 +46,42 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+
+  # gnome
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
+
+  # plasma
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+
+  qt = {
+    enable = true;
+    platformTheme = "gnome";
+    style = "adwaita-dark";
+  };
+
+  # hyprland
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+  environment.sessionVariables = {
+    # Hint electron apps to use wayland
+    NIXOS_OZONE_WL = "1";
+  };
+  # end hyprland
+
+  fonts.packages = with pkgs; [
+    nerdfonts
+    font-awesome
+  ];
 
 
   # https://nixos.wiki/wiki/Nvidia
   hardware.graphics.enable = true;
   hardware.nvidia = {
-    modesetting.enable = true;
+    modesetting.enable = true; # most wayland compositors need this
     powerManagement.enable = false;
     powerManagement.finegrained = false;
     # should be true if gpu is newer than RTX 20 Series, false otherwise
