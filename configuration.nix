@@ -17,6 +17,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # attempting to fix a "too-many-monitors" bug
+  # https://github.com/NixOS/nixpkgs/issues/302059
+  boot.kernelParams = [
+    "modset=1"
+    "initcall_blacklist=simpledrm_platform_driver_init"
+  ];
+
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
