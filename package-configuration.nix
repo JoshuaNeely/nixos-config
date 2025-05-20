@@ -10,6 +10,7 @@
         podman
         inotify-tools
         udiskie
+        stow
 
         # editors
         vim
@@ -17,6 +18,9 @@
         emacs
           ripgrep # used by doom emacs
           fd # used by doom emacs
+          cmake # used for compiling some packages
+          gnumake # used for compiling some packages
+          libtool # used for compiling some packages
 
         # password manager
         gnupg
