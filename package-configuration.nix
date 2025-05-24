@@ -11,6 +11,7 @@
         inotify-tools
         udiskie
         stow
+        killall
 
         # editors
         vim
@@ -37,9 +38,6 @@
         # helps find keycodes that hypr config uses (and other tools?)
         wev
 
-        # app launchers
-        hyprlauncher
-
         # file manager
         yazi
 
@@ -51,7 +49,7 @@
         dunst # notifation daemon
         libnotify # needed for notification daemons
         swww # wallpaper daemon
-        rofi-wayland # app launcher
+        rofi-wayland # app launcher and window switcher
         wl-clipboard # expose wl-copy and wl-paste
         networkmanagerapplet # adds a widget to waybar(?) that allows choosing network
         hypridle # handles detecting idleness and forwarding signals, including lock signals
