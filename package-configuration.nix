@@ -31,6 +31,7 @@
         # games
         steamcmd
         discord
+        sunshine
 
         # browser
         firefox
@@ -55,6 +56,13 @@
         hypridle # handles detecting idleness and forwarding signals, including lock signals
         hyprlock # lock screen
     ];
+
+    security.wrappers.sunshine = {
+      owner = "root";
+      group = "root";
+      capabilities = "cap_sys_admin+p";
+      source = "${pkgs.sunshine}/bin/sunshine";
+    };
 
     services.pcscd.enable = true;
     programs.gnupg.agent = {
