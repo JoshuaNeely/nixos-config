@@ -12,6 +12,15 @@
         udiskie
         stow
         killall
+        nushell
+        swaynotificationcenter
+        xclip
+        bat  # better cat
+
+        # used together for screenshots + screenshot annotation
+        swappy
+        slurp
+        grim
 
         # editors
         vim
