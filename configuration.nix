@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./package-configuration.nix
       ./hardware-configuration.nix
-      ./home-manager.nix
+      #./home-manager.nix
       ./env-vars.nix
     ];
 
