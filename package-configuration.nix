@@ -16,6 +16,8 @@
         swaynotificationcenter
         xclip
         bat  # better cat
+        # docker
+        docker-compose 
 
         # used together for screenshots + screenshot annotation
         swappy
@@ -97,4 +99,9 @@
     };
 }
 
+
+    # docker config
+    virtualisation.docker.enable = true;
+    users.extraGroups.docker.members = [ "josh" ];
+}
 
